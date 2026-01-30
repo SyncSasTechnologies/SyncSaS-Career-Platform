@@ -54,7 +54,7 @@ const cards = [
     title: "Freelancing",
     icon: "🧑‍💻",
     desc: "Work on gigs, earn money, build reputation",
-    to: "/freelancing",
+    to: "/freelance/",
   },
 ]
 

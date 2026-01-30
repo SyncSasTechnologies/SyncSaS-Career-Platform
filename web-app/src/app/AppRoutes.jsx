@@ -27,6 +27,10 @@ import InternshipDetail from "../modules/internship/pages/InternshipDetail";
 import EnrollInternship from "../modules/internship/pages/EnrollInternship";
 import InternDashboard from "../modules/internship/pages/InternDashboard";
 
+/* ===== Freelance Module ===== */
+import GigList from "../modules/freelance/GigList";
+import GigDetail from "../modules/freelance/GigDetail";
+
 /* ===== Mentor ===== */
 import MentorDashboard from "../modules/internship/mentor/MentorDashboard";
 import MentorLayout from "../mentor/layout/MentorLayout"
@@ -64,6 +68,9 @@ function AppRoutes() {
           <Route path="/home" element={<Home />} />
           <Route path="/internships" element={<InternshipList />} />
           <Route path="/internships/:id" element={<InternshipDetail />} />
+          {/* Freelance public routes */}
+          <Route path="/freelance/gigs" element={<GigList />} />
+          <Route path="/freelance/gigs/:id" element={<GigDetail />} />
         </Route>
 
         {/* ================= AUTH ================= */}
