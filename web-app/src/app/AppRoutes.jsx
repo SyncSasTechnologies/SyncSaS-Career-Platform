@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdminInternships from "../admin/internship/Internships"
 import AdminEnrollments from "../admin/internship/Enrollments"
+import ProfilePage from "../modules/freelance/freelancer-module/profile/ProfilePage";
+import SkillsPage from "../modules/freelance/freelancer-module/skills/SkillsPage";
+
 
 
 
@@ -21,21 +24,26 @@ import Register from "../auth/Register";
 import Navbar from "../common/Navbar";
 import Home from "../pages/Home";
 
-/* ===== Internship Module ===== */
+/* ===== Internship Module ===== 
 import InternshipList from "../modules/internship/pages/InternshipList";
 import InternshipDetail from "../modules/internship/pages/InternshipDetail";
 import EnrollInternship from "../modules/internship/pages/EnrollInternship";
 import InternDashboard from "../modules/internship/pages/InternDashboard";
+*/
+
+/* ===== Freelance Module ===== */
+import DashboardPage from "../modules/freelance/freelancer-module/dashboard/DashboardPage";
+
 
 /* ===== Mentor ===== */
-import MentorDashboard from "../modules/internship/mentor/MentorDashboard";
-import MentorLayout from "../mentor/layout/MentorLayout"
-import CreateInternship from "../mentor/internships/CreateInternship"
-import MyInternships from "../mentor/internships/MyInternships"
-import InternshipEnrollments from "../mentor/enrollments/InternshipEnrollments"
-import Tasks from "../mentor/tasks/Tasks"
-import Submissions from "../mentor/tasks/Submissions"
-import Performance from "../mentor/analytics/Performance"
+// import MentorDashboard from "../modules/internship/mentor/MentorDashboard";
+// import MentorLayout from "../mentor/layout/MentorLayout"
+// import CreateInternship from "../mentor/internships/CreateInternship"
+// import MyInternships from "../mentor/internships/MyInternships"
+// import InternshipEnrollments from "../mentor/enrollments/InternshipEnrollments"
+// import Tasks from "../mentor/tasks/Tasks"
+// import Submissions from "../mentor/tasks/Submissions"
+// import Performance from "../mentor/analytics/Performance"
 
 /* ===== Admin ===== */
 import AdminDashboard from "../admin/dashboard/AdminDashboard";
@@ -62,8 +70,8 @@ function AppRoutes() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/internships" element={<InternshipList />} />
-          <Route path="/internships/:id" element={<InternshipDetail />} />
+          {/* <Route path="/internships" element={<InternshipList />} />
+          <Route path="/internships/:id" element={<InternshipDetail />} /> */}
         </Route>
 
         {/* ================= AUTH ================= */}
@@ -71,7 +79,7 @@ function AppRoutes() {
         <Route path="/register" element={<Register />} />
 
         {/* ================= INTERN ================= */}
-        <Route
+        {/* <Route
           path="/internships/enroll/:id"
           element={
             <ProtectedRoute>
@@ -87,30 +95,30 @@ function AppRoutes() {
               <InternDashboard />
             </ProtectedRoute>
           }
-        />
+        /> */}
 
         {/* ================= MENTOR ================= */}
-        <Route
-  path="/mentor"
-  element={
-    <ProtectedRoute>
-      <RoleRoute role="mentor">
-        <MentorLayout />
-      </RoleRoute>
-    </ProtectedRoute>
-  }
->
-  <Route path="internships" element={<MyInternships />} />
-  <Route path="internships/create" element={<CreateInternship />} />
-  <Route
-  path="enrollments/:internshipId"
-  element={<InternshipEnrollments />}
-/>
-  <Route index element={<MentorDashboard />} />
-  <Route path="tasks/:internshipId" element={<Tasks />} />
-<Route path="tasks/:internshipId/submissions/:taskId" element={<Submissions />} />
-<Route path="analytics/:internshipId" element={<Performance />} />
-</Route>
+        {/* <Route
+          path="/mentor"
+          element={
+            <ProtectedRoute>
+              <RoleRoute role="mentor">
+                <MentorLayout />
+              </RoleRoute>
+            </ProtectedRoute>
+          }
+        >
+          <Route path="internships" element={<MyInternships />} />
+          <Route path="internships/create" element={<CreateInternship />} />
+          <Route
+            path="enrollments/:internshipId"
+            element={<InternshipEnrollments />}
+          />
+          <Route index element={<MentorDashboard />} />
+          <Route path="tasks/:internshipId" element={<Tasks />} />
+          <Route path="tasks/:internshipId/submissions/:taskId" element={<Submissions />} />
+          <Route path="analytics/:internshipId" element={<Performance />} />
+        </Route> */}
 
 
         {/* ================= ADMIN ================= */}
@@ -142,6 +150,10 @@ function AppRoutes() {
           }
         >
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/freelancer/dashboard" element={<DashboardPage />} />
+          <Route path="/freelancer/profile" element={<ProfilePage />} />
+          <Route path="/freelancer/skills" element={<SkillsPage />} />
+
         </Route>
 
         {/* ================= FALLBACK ================= */}
