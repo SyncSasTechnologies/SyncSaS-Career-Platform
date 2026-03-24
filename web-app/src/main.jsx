@@ -1,3 +1,8 @@
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { ProposalForm } from "./proposals";
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './app/App'
@@ -7,8 +12,13 @@ import { RoleProvider } from "./auth/RoleContext"
 import { ThemeProvider } from './context/ThemeContext'    // ← ADD THIS LINE
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <ProposalForm />
+  </React.StrictMode>
+);
+
+
     <ThemeProvider>                  {/* ← ADD THIS */}
       <AuthProvider>
         <RoleProvider>
@@ -18,3 +28,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </ThemeProvider>                 {/* ← ADD THIS */}
   </React.StrictMode>
 )
+
