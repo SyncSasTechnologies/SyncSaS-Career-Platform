@@ -61,7 +61,7 @@ function Dashboard() {
 function AppRoutes() {
   return (
     <BrowserRouter>
-      <Navbar />
+     { /*  <Navbar />  */}
 
       <Routes>
         {/* ================= PUBLIC ================= */}
@@ -130,9 +130,9 @@ function AppRoutes() {
   path="/mentor"
   element={
     <ProtectedRoute>
-      <RoleRoute role="mentor">
+      {/*<RoleRoute role="mentor">*/}
         <MentorLayout />
-      </RoleRoute>
+     {/*</RoleRoute>*/}
     </ProtectedRoute>
   }
 >
