@@ -6,6 +6,7 @@ import AdminEnrollments from "../admin/internship/Enrollments"
 
 /* ===== Layouts ===== */
 import PublicLayout from "../layouts/PublicLayout";
+import InternshipLayout from "../layouts/InternshipLayout";
 import DashboardLayout from "../layouts/DashboardLayout";
 import AdminLayout from "../admin/layout/AdminLayout";
 
@@ -18,14 +19,21 @@ import Login from "../auth/Login";
 import Register from "../auth/Register";
 
 /* ===== Common ===== */
-import Navbar from "../common/Navbar";
 import Home from "../pages/Home";
 
 /* ===== Internship Module ===== */
-import InternshipList from "../modules/internship/pages/InternshipList";
-import InternshipDetail from "../modules/internship/pages/InternshipDetail";
-import EnrollInternship from "../modules/internship/pages/EnrollInternship";
 import InternDashboard from "../modules/internship/pages/InternDashboard";
+import InternshipBrowse from "../modules/internship/pages/InternshipBrowse";
+import InternshipDetailPage from "../modules/internship/pages/InternshipDetailPage";
+import InternshipEnrollPage from "../modules/internship/pages/InternshipEnrollPage";
+import InternshipTasks from "../modules/internship/pages/InternshipTasks";
+import InternshipCertificate from "../modules/internship/pages/InternshipCertificate";
+import InternshipOverview from "../modules/internship/pages/InternshipOverview";
+import TaskSubmissionPage from "../modules/internship/pages/TaskSubmissionPage";
+import ProgressAnalytics from "../modules/internship/pages/ProgressAnalytics";
+import ResourcesLibrary from "../modules/internship/pages/ResourcesLibrary";
+import MentorFeedback from "../modules/internship/pages/MentorFeedback";
+import InternshipSettings from "../modules/internship/pages/InternshipSettings";
 
 /* ===== Freelance Module ===== */
 import GigList from "../modules/freelance/GigList";
@@ -61,43 +69,45 @@ function Dashboard() {
 function AppRoutes() {
   return (
     <BrowserRouter>
+
+
      { /*  <Navbar />  */}
+
 
       <Routes>
         {/* ================= PUBLIC ================= */}
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
           <Route path="/internships" element={<InternshipList />} />
           <Route path="/internships/:id" element={<InternshipDetail />} />
         {/* Freelance public routes */}
           <Route path="/freelance" element={<FreelanceHome />} />
           <Route path="/freelance/gigs" element={<GigList />} />
           <Route path="/freelance/gig/:gigId" element={<GigDetail />} />
+
         </Route>
 
-        {/* ================= AUTH ================= */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-
         {/* ================= INTERN ================= */}
-        <Route
-          path="/internships/enroll/:id"
-          element={
-            <ProtectedRoute>
-              <EnrollInternship />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/intern/dashboard"
-          element={
-            <ProtectedRoute>
-              <InternDashboard />
-            </ProtectedRoute>
-          }
-        />
+        <Route element={<InternshipLayout />}>
+          <Route path="/internships" element={<InternDashboard />} />
+          <Route path="/internships/browse" element={<InternshipBrowse />} />
+          <Route path="/internships/:id" element={<InternshipDetailPage />} />
+          <Route path="/internships/enroll/:id" element={<InternshipEnrollPage />} />
+          <Route path="/intern/overview" element={<InternshipOverview />} />
+          <Route path="/intern/tasks" element={<InternshipTasks />} />
+          <Route path="/intern/tasks/submit/:taskId" element={<TaskSubmissionPage />} />
+          <Route path="/intern/certificate" element={<InternshipCertificate />} />
+          <Route path="/intern/progress" element={<ProgressAnalytics />} />
+          <Route path="/intern/resources" element={<ResourcesLibrary />} />
+          <Route path="/intern/feedback" element={<MentorFeedback />} />
+          <Route path="/intern/settings" element={<InternshipSettings />} />
+          <Route path="/intern/dashboard" element={<InternDashboard />} />
+        </Route>
 
         {/* ================= FREELANCER ================= */}
         <Route
