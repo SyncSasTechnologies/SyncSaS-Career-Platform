@@ -1,5 +1,5 @@
 import axios from "axios"
-import { auth } from "../auth/firebase"
+import { auth } from "../auth/firebase.js"
 
 const API_URL = "http://localhost:5000/api/users"
 
