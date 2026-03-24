@@ -35,6 +35,12 @@ import ResourcesLibrary from "../modules/internship/pages/ResourcesLibrary";
 import MentorFeedback from "../modules/internship/pages/MentorFeedback";
 import InternshipSettings from "../modules/internship/pages/InternshipSettings";
 
+/* ===== Freelance Module ===== */
+import GigList from "../modules/freelance/GigList";
+import GigDetail from "../modules/freelance/GigDetail";
+import CreateGig from "../modules/freelance/CreateGig";
+import FreelanceHome from "../modules/freelance/FreelanceHome";
+
 /* ===== Mentor ===== */
 import MentorDashboard from "../modules/internship/mentor/MentorDashboard";
 import MentorLayout from "../mentor/layout/MentorLayout"
@@ -63,13 +69,27 @@ function Dashboard() {
 function AppRoutes() {
   return (
     <BrowserRouter>
+
+
+     { /*  <Navbar />  */}
+
+
       <Routes>
         {/* ================= PUBLIC ================= */}
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+          <Route path="/internships" element={<InternshipList />} />
+          <Route path="/internships/:id" element={<InternshipDetail />} />
+        {/* Freelance public routes */}
+          <Route path="/freelance" element={<FreelanceHome />} />
+          <Route path="/freelance/gigs" element={<GigList />} />
+          <Route path="/freelance/gig/:gigId" element={<GigDetail />} />
+
         </Route>
 
         {/* ================= INTERN ================= */}
@@ -89,14 +109,40 @@ function AppRoutes() {
           <Route path="/intern/dashboard" element={<InternDashboard />} />
         </Route>
 
+        {/* ================= FREELANCER ================= */}
+        <Route
+          path="/freelance/create-gig"
+          element={
+            <ProtectedRoute>
+              <CreateGig />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/freelance/edit-gig/:gigId"
+          element={
+            <ProtectedRoute>
+              <CreateGig />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/freelance/my-gigs"
+          element={
+            <ProtectedRoute>
+              <GigList />
+            </ProtectedRoute>
+          }
+        />
+
         {/* ================= MENTOR ================= */}
         <Route
   path="/mentor"
   element={
     <ProtectedRoute>
-      <RoleRoute role="mentor">
+      {/*<RoleRoute role="mentor">*/}
         <MentorLayout />
-      </RoleRoute>
+     {/*</RoleRoute>*/}
     </ProtectedRoute>
   }
 >
