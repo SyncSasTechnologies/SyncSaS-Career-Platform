@@ -1,4 +1,5 @@
 # SyncSaS Career Platform
+Freelancer Dashboard Module implemented by Nishant Galhat.
 
 ## Overview
 Unified platform for Internships, Jobs, and Freelancing.

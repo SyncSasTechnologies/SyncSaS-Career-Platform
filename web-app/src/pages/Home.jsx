@@ -353,14 +353,14 @@ export default function Home() {
         textAlign: "center",
       }}>
         <img
-            src="/logo.png"
-            alt="SyncSaS Logo"
-            style={{
-              height: "32px",
-              width: "32px",
-              objectFit: "contain",
-            }}
-          />
+          src="/logo.png"
+          alt="SyncSaS Logo"
+          style={{
+            height: "32px",
+            width: "32px",
+            objectFit: "contain",
+          }}
+        />
         <p style={{
           color: "var(--text-muted)",
           fontSize: "14px",
@@ -372,7 +372,7 @@ export default function Home() {
 
     </div>
   )
- 
+
 }
 
 /* ---------------- DATA ---------------- */
@@ -471,5 +471,5 @@ const styles = {
   },
 }
 
-}
+
 
