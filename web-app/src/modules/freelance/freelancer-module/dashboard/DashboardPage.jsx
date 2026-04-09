@@ -5,6 +5,7 @@ import { doc, getDoc } from "firebase/firestore"
 
 const DashboardPage = () => {
     const { user } = useAuth()
+
     const [profile, setProfile] = useState(null)
 
     useEffect(() => {
