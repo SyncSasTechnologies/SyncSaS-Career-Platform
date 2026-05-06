@@ -2,7 +2,7 @@
 
 .progress-analytics-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   padding: 2rem 1rem;
 }
 
@@ -77,9 +77,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-clip: text;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -117,7 +117,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   border-radius: 3px;
   transition: width 0.3s ease;
 }
@@ -170,8 +170,8 @@
   font-size: 0.85rem;
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
-  background: rgba(102, 126, 234, 0.1);
-  color: #667eea;
+  background: rgba(15, 118, 110, 0.1);
+  color: var(--primary);
   font-weight: 600;
 }
 
@@ -223,7 +223,7 @@
 .activity-bar {
   width: 60%;
   max-width: 60px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   border-radius: 6px 6px 0 0;
   position: relative;
   transition: all 0.3s ease;
@@ -350,7 +350,7 @@
 
 .metric-fill {
   height: 100%;
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   border-radius: 4px;
   transition: width 0.3s ease;
 }
@@ -386,7 +386,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   border-radius: 10px;
 }
 
@@ -412,7 +412,7 @@
 }
 
 .view-all-link {
-  color: #667eea;
+  color: var(--primary);
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
@@ -465,7 +465,7 @@
 
 .tasks-remaining {
   font-size: 0.9rem;
-  color: #667eea;
+  color: var(--primary);
   font-weight: 600;
 }
 

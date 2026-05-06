@@ -34,7 +34,7 @@
 
 .overall-progress .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #4CAF50, #45a049);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   border-radius: 6px;
   transition: width 0.8s ease;
 }
@@ -70,13 +70,13 @@
 }
 
 .level-card:hover {
-  border-color: #667eea;
+  border-color: var(--primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .level-card.expanded {
-  border-color: #667eea;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
 }
 
 /* ==================== LEVEL HEADER ==================== */
@@ -115,15 +115,15 @@
 }
 
 .level-number.level-1 {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 
 .level-number.level-2 {
-  background: linear-gradient(135deg, #f093fb, #f5576c);
+  background: linear-gradient(135deg, var(--secondary), #fb923c);
 }
 
 .level-number.level-3 {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  background: linear-gradient(135deg, #14b8a6, #2dd4bf);
 }
 
 .level-info h4 {
@@ -215,9 +215,9 @@
 }
 
 .task-row:hover {
-  border-color: #667eea;
-  background: #f5f7ff;
-  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.1);
+  border-color: var(--primary);
+  background: #f1fbf9;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.1);
 }
 
 .task-status-icon {
@@ -268,7 +268,7 @@
 /* ==================== LEVEL COMPLETED ==================== */
 .level-completed-badge {
   background: #c8e6c9;
-  border: 2px solid #4CAF50;
+  border: 2px solid var(--primary);
   color: #2e7d32;
   padding: 15px;
   border-radius: 6px;
@@ -306,7 +306,7 @@
   background: white;
   padding: 25px;
   border-radius: 10px;
-  border: 2px solid #667eea;
+  border: 2px solid var(--primary);
 }
 
 .progress-summary h4 {
@@ -327,7 +327,7 @@
   gap: 8px;
   text-align: center;
   padding: 15px;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  background: linear-gradient(135deg, var(--bg), #e7f1ee);
   border-radius: 8px;
 }
 
@@ -341,7 +341,7 @@
   color: #333;
   font-size: 28px;
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -10,13 +10,10 @@ dotenv.config()
 const seedDatabase = async () => {
   try {
     // Connect to MongoDB
-    const mongoUri = process.env.MONGODB_URI || "mongodb://localhost:27017/syncsaas"
+    const mongoUri = process.env.MONGO_URI || "mongodb://localhost:27017/syncsaas"
     console.log(`Connecting to MongoDB at ${mongoUri}...`)
     
-    await mongoose.connect(mongoUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    await mongoose.connect(mongoUri)
     
     console.log("✓ Connected to MongoDB")
 

@@ -3,7 +3,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, var(--bg) 0%, #e7f1ee 100%);
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -21,7 +21,7 @@
   height: 50px;
   border: 4px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  border-top-color: #007bff;
+  border-top-color: var(--primary);
   animation: spin 1s linear infinite;
 }
 
@@ -89,7 +89,7 @@
 
 .stat-card {
   padding: 20px 30px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: white;
   border-radius: 8px;
   text-align: center;
@@ -145,9 +145,9 @@
 }
 
 .tab-btn.active {
-  background-color: #667eea;
+  background-color: var(--primary);
   color: white;
-  border-color: #667eea;
+  border-color: var(--primary);
 }
 
 /* ==================== DASHBOARD CONTENT LAYOUT ==================== */
@@ -211,12 +211,12 @@
 
 .internship-item:hover {
   background: #f0f0f0;
-  border-color: #667eea;
+  border-color: var(--primary);
 }
 
 .internship-item.active {
   background: #e3e5ff;
-  border-color: #667eea;
+  border-color: var(--primary);
 }
 
 .internship-item-header {
@@ -251,7 +251,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   border-radius: 3px;
   transition: width 0.5s ease;
 }
@@ -379,7 +379,7 @@
 .level-badge {
   display: inline-block;
   padding: 15px 30px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   border-radius: 10px;
   font-size: 24px;

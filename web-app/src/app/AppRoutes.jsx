@@ -83,8 +83,8 @@ function AppRoutes() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          <Route path="/internships" element={<InternshipList />} />
-          <Route path="/internships/:id" element={<InternshipDetail />} />
+          <Route path="/internships" element={<InternshipBrowse />} />
+          <Route path="/internships/:id" element={<InternshipDetailPage />} />
         {/* Freelance public routes */}
           <Route path="/freelance" element={<FreelanceHome />} />
           <Route path="/freelance/gigs" element={<GigList />} />
