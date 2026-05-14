@@ -22,8 +22,8 @@ import Register from "../auth/Register";
 import Home from "../pages/Home";
 
 /* ===== Internship Module ===== */
-import InternDashboard from "../modules/internship/pages/InternDashboard";
 import InternshipBrowse from "../modules/internship/pages/InternshipBrowse";
+import InternshipDashboard from "../modules/internship/pages/InternshipDashboard";
 import InternshipDetailPage from "../modules/internship/pages/InternshipDetailPage";
 import InternshipEnrollPage from "../modules/internship/pages/InternshipEnrollPage";
 import InternshipTasks from "../modules/internship/pages/InternshipTasks";
@@ -80,6 +80,10 @@ function AppRoutes() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
 
+          <Route path="/internship" element={<InternshipOverview />} />
+          <Route path="/internship/browse" element={<InternshipBrowse />} />
+          <Route path="/internship/:id" element={<InternshipDetailPage />} />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
@@ -94,7 +98,7 @@ function AppRoutes() {
 
         {/* ================= INTERN ================= */}
         <Route element={<InternshipLayout />}>
-          <Route path="/internships" element={<InternDashboard />} />
+          <Route path="/internships" element={<InternshipDashboard />} />
           <Route path="/internships/browse" element={<InternshipBrowse />} />
           <Route path="/internships/:id" element={<InternshipDetailPage />} />
           <Route path="/internships/enroll/:id" element={<InternshipEnrollPage />} />
@@ -106,7 +110,7 @@ function AppRoutes() {
           <Route path="/intern/resources" element={<ResourcesLibrary />} />
           <Route path="/intern/feedback" element={<MentorFeedback />} />
           <Route path="/intern/settings" element={<InternshipSettings />} />
-          <Route path="/intern/dashboard" element={<InternDashboard />} />
+          <Route path="/intern/dashboard" element={<InternshipDashboard />} />
         </Route>
 
         {/* ================= FREELANCER ================= */}

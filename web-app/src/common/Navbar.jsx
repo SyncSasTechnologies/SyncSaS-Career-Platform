@@ -1,5 +1,5 @@
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { NavLink, Link, useNavigate, useLocation } from "react-router-dom"
 import { useAuth } from "../auth/AuthContext"
 import { useTheme } from "../context/ThemeContext"
@@ -12,6 +12,10 @@ export default function Navbar({ variant = "intern" }) {
   const { isDark, toggleTheme } = useTheme()
   const navigate = useNavigate()
   const location = useLocation()
+
+  useEffect(() => {
+    handleClose()
+  }, [location.pathname])
 
   const handleLogout = async () => {
     try {
@@ -48,60 +52,34 @@ export default function Navbar({ variant = "intern" }) {
         </button>
 
         <div className={`nav-links ${isOpen ? "open" : ""}`}>
-          {variant === "public" ? (
-            <>
-              <div className="nav-group">
-                <NavLink to="/" className={navLinkClass} onClick={handleClose}>
-                  Home
-                </NavLink>
-              </div>
-              <div className="nav-group nav-actions">
-                <NavLink to="/login" className={navLinkClass} onClick={handleClose}>
-                  Login
-                </NavLink>
-                <NavLink to="/register" className="btn-primary" onClick={handleClose}>
-                  Register
-                </NavLink>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="nav-group">
-                <NavLink to="/" className={navLinkClass} onClick={handleClose}>
-                  Home
-                </NavLink>
+          <div className="nav-group">
+            <NavLink to="/" className={navLinkClass} onClick={handleClose}>
+              Home
+            </NavLink>
+
+            {variant === "public" ? (
+              <>
                 <NavLink to="/internships" className={navLinkClass} onClick={handleClose}>
-                  Dashboard
+                  Internships
                 </NavLink>
+                <NavLink to="/freelance/gigs" className={navLinkClass} onClick={handleClose}>
+                  Gigs
+                </NavLink>
+              </>
+            ) : (
+              <>
                 <NavLink to="/internships/browse" className={navLinkClass} onClick={handleClose}>
                   Browse
                 </NavLink>
                 <NavLink to="/intern/overview" className={navLinkClass} onClick={handleClose}>
                   Overview
                 </NavLink>
-              </div>
-
-              <div className="nav-group nav-actions">
-                {user ? (
-                  <>
-                    <span className="user-pill">{user.email}</span>
-                    <button className="btn-ghost" onClick={handleLogout}>
-                      Logout
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <NavLink to="/login" className={navLinkClass} onClick={handleClose}>
-                      Login
-                    </NavLink>
-                    <NavLink to="/register" className="btn-primary" onClick={handleClose}>
-                      Register
-                    </NavLink>
-                  </>
-                )}
-              </div>
-            </>
-          )}
+                <NavLink to="/freelance/gigs" className={navLinkClass} onClick={handleClose}>
+                  Freelance
+                </NavLink>
+              </>
+            )}
+          </div>
         </div>
 
         <div className="nav-right">
@@ -111,7 +89,7 @@ export default function Navbar({ variant = "intern" }) {
 
           {user ? (
             <>
-              <Link to="/intern/dashboard" className="btn-link">
+              <Link to={variant === "public" ? "/dashboard" : "/intern/dashboard"} className="btn-link">
                 Dashboard
               </Link>
               <button className="btn-logout" onClick={handleLogout}>
@@ -120,7 +98,12 @@ export default function Navbar({ variant = "intern" }) {
             </>
           ) : (
             <>
-              <Link to="/login" className="btn-link">Login</Link>
+              <Link to="/login" className="btn-link">
+                Login
+              </Link>
+              <Link to="/register" className="btn-primary">
+                Register
+              </Link>
             </>
           )}
         </div>
