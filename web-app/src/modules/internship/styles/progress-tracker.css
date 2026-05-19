@@ -1,0 +1,467 @@
+/* ==================== PROGRESS TRACKER ==================== */
+.progress-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ==================== TRACKER OVERVIEW ==================== */
+.tracker-overview {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.tracker-overview h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.overall-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.overall-progress .progress-bar {
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.overall-progress .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 6px;
+  transition: width 0.8s ease;
+}
+
+.progress-text {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-text strong {
+  color: #333;
+  font-size: 16px;
+}
+
+/* ==================== LEVELS CONTAINER ==================== */
+.levels-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==================== LEVEL CARD ==================== */
+.level-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.level-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.level-card.expanded {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+}
+
+/* ==================== LEVEL HEADER ==================== */
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #f9f9f9, #ffffff);
+  transition: background 0.3s ease;
+}
+
+.level-card:hover .level-header {
+  background: #f5f5f5;
+}
+
+.level-header-left {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex: 1;
+}
+
+.level-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.level-number.level-1 {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.level-number.level-2 {
+  background: linear-gradient(135deg, var(--secondary), #fb923c);
+}
+
+.level-number.level-3 {
+  background: linear-gradient(135deg, #14b8a6, #2dd4bf);
+}
+
+.level-info h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.level-info p {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.level-header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.level-progress-mini {
+  width: 120px;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.level-progress-mini .progress-bar-mini {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.level-progress-text {
+  font-weight: 600;
+  color: #333;
+  min-width: 35px;
+  text-align: right;
+  font-size: 14px;
+}
+
+.expand-icon {
+  color: #999;
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+.level-card.expanded .expand-icon {
+  transform: rotate(90deg);
+}
+
+/* ==================== LEVEL TASKS ==================== */
+.level-tasks {
+  padding: 20px;
+  background: #f9f9f9;
+  border-top: 2px solid #e0e0e0;
+}
+
+.tasks-header {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tasks-header h5 {
+  margin: 0;
+  color: #333;
+  font-size: 15px;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.task-row:hover {
+  border-color: var(--primary);
+  background: #f1fbf9;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.1);
+}
+
+.task-status-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  border: 2px solid;
+  border-color: inherit;
+}
+
+.task-name {
+  flex: 1;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.task-status-label {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.task-status-label.status-completed {
+  background: #c8e6c9;
+  color: #2e7d32;
+}
+
+.task-status-label.status-in-progress {
+  background: #fff9c4;
+  color: #f57f17;
+}
+
+.task-status-label.status-pending {
+  background: #eeeeee;
+  color: #616161;
+}
+
+/* ==================== LEVEL COMPLETED ==================== */
+.level-completed-badge {
+  background: #c8e6c9;
+  border: 2px solid var(--primary);
+  color: #2e7d32;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 15px;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== BUTTONS IN LEVEL TASKS ==================== */
+.level-tasks .btn {
+  width: 100%;
+  text-align: center;
+  padding: 12px 20px;
+}
+
+.level-tasks .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==================== PROGRESS SUMMARY ==================== */
+.progress-summary {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+}
+
+.progress-summary h4 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.summary-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--bg), #e7f1ee);
+  border-radius: 8px;
+}
+
+.summary-label {
+  color: #666;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.summary-value {
+  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .level-header {
+    padding: 15px;
+  }
+
+  .level-header-left {
+    gap: 10px;
+  }
+
+  .level-number {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .level-info h4 {
+    font-size: 14px;
+  }
+
+  .level-info p {
+    font-size: 12px;
+  }
+
+  .level-header-right {
+    gap: 10px;
+  }
+
+  .level-progress-mini {
+    width: 80px;
+  }
+
+  .level-progress-text {
+    font-size: 12px;
+    min-width: 30px;
+  }
+
+  .level-tasks {
+    padding: 15px;
+  }
+
+  .task-row {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .task-name {
+    font-size: 13px;
+  }
+
+  .task-status-label {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .summary-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-stat {
+    padding: 12px;
+  }
+
+  .summary-value {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .level-card {
+    border-radius: 8px;
+  }
+
+  .level-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .level-header-left {
+    width: 100%;
+  }
+
+  .level-header-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .level-progress-mini {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .expand-icon {
+    align-self: flex-start;
+  }
+
+  .task-row {
+    flex-wrap: wrap;
+  }
+
+  .task-name {
+    flex: 1 1 100%;
+  }
+
+  .summary-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-stat {
+    padding: 15px;
+  }
+
+  .summary-value {
+    font-size: 24px;
+  }
+}

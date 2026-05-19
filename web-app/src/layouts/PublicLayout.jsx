@@ -4,7 +4,7 @@ import Navbar from '../common/Navbar'
 export default function PublicLayout() {
   return (
     <>
-      <Navbar />
+      <Navbar variant="public" />
       <Outlet />
     </>
   )

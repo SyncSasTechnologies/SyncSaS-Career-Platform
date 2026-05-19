@@ -1,0 +1,264 @@
+.gig-detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.btn-back {
+  background-color: transparent;
+  border: none;
+  color: var(--primary);
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.btn-back:hover {
+  color: var(--primary-dark);
+}
+
+.gig-detail-content {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gig-detail-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  background-color: #f5f5f5;
+}
+
+.gig-detail-info {
+  padding: 30px;
+}
+
+.gig-detail-info h1 {
+  font-size: 28px;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.gig-category-tag {
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+/* Freelancer Card */
+.freelancer-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border-left: 4px solid var(--primary);
+}
+
+.freelancer-info {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex: 1;
+}
+
+.freelancer-image-large {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #e0e0e0;
+}
+
+.freelancer-info h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.rating {
+  color: #f39c12;
+  margin: 5px 0 0 0;
+  font-size: 14px;
+}
+
+.gig-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit,
+.btn-delete,
+.btn-send-proposal {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: var(--secondary);
+}
+
+.btn-delete {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c62828;
+}
+
+.btn-send-proposal {
+  background-color: var(--primary);
+  color: white;
+  font-size: 16px;
+  padding: 12px 30px;
+}
+
+.btn-send-proposal:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Details Grid */
+.gig-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.detail-box {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.detail-box label {
+  color: #999;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.detail-value {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-bottom: 30px;
+}
+
+.skills-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+/* Description Section */
+.description-section {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.description-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.description-section p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Stats */
+.gig-stats {
+  color: #999;
+  font-size: 13px;
+  padding-top: 20px;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+}
+
+.loading {
+  color: #666;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+  .gig-detail-info {
+    padding: 20px;
+  }
+
+  .gig-detail-info h1 {
+    font-size: 22px;
+  }
+
+  .freelancer-card {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .freelancer-info {
+    justify-content: center;
+  }
+
+  .gig-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-send-proposal {
+    width: 100%;
+  }
+
+  .gig-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
